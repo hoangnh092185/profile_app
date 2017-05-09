@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Background from '../public/IMG_0206.JPG';
+
 console.log(Component);
 
 class App extends Component{
@@ -11,9 +12,9 @@ class App extends Component{
         name: 'Nhat Hoang',
         biography: '31 year old Designer / Developer living in Portland. Love to make stuff.',
       },
-      image: 'src="../public/IMG_0206.JPG"',
+      image: 'http://static1.squarespace.com/static/55acc005e4b098e615cd80e2/t/57b057398419c2c454f09924/1471025851733/',
       quote: {
-        content: 'A bed is a great place to sleep, but the best place is on the laptop while daddy is working.',
+        content: 'A bed is a great place to sleep, but the best place is on the laptop while it\'s being use.',
         source: 'The Secret Life of Nemo, 13 year old dlh cat.'
       }
 
@@ -22,7 +23,7 @@ class App extends Component{
   render() {
       return(
         <div className="App">
-          <Image src={this.state.image} />
+          <Image src={Background} />
           <Profile person={this.state.person} quote={this.state.quote} />
         </div>
       );
@@ -31,7 +32,7 @@ class App extends Component{
 
 function Image(props){
     return (
-      <div className="Image" style={{backgroundImage: 'props.src'}}></div>
+      <div className="Image" style={{backgroundImage: 'url(' + props.src + ')'}}></div>
     );
 }
 function Profile(props){
